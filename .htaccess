@@ -1,0 +1,46 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteCond $1 !^(index.php|fonts|js_trd|assets|img|upload|assets|robots.txt|crossdomain.xml)
+RewriteRule ^(.*)$  /index.php?/$1 [L]
+
+AddType application/x-shockwave-flash .swf
+
+<IfModule mod_deflate.c>
+    <IfModule mod_php5.c>
+        php_flag zlib.output_compression 1
+        php_value zlib.output_compression_level 7
+    </IfModule>
+
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+
+    <FilesMatch "\.(ttf|otf|eot|svg)$" >
+        SetOutputFilter DEFLATE
+    </FilesMatch>
+</IfModule>
+
+<ifmodule mod_expires.c>
+#ExpiresActive On
+#ExpiresDefault "access plus 1 seconds"
+#ExpiresByType text/html "access plus 7200 seconds"
+#ExpiresByType image/gif "access plus 2678400 seconds"
+#ExpiresByType image/jpeg "access plus 2678400 seconds"
+ExpiresByType image/png "access plus 2678400 seconds"
+#ExpiresByType text/css "access plus 518400 seconds"
+#ExpiresByType text/javascript "access plus 2678400 seconds"
+#ExpiresByType application/x-javascript "access plus 2678400 seconds"
+</ifmodule>
+
+# Cache Headers
+<ifmodule mod_headers.c>
+# Cache specified files for 31 days
+#Header set Cache-Control "max-age=2678400, public"
+# Cache HTML files for a couple hours
+#Header set Cache-Control "max-age=7200, private, must-revalidate"
+# Cache PDFs for a day
+#Header set Cache-Control "max-age=86400, public"
+# Cache Javascripts for 31 days
+#Header set Cache-Control "max-age=2678400, private"
+</ifmodule>

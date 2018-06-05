@@ -1,0 +1,76 @@
+#section_p, div#user{
+	border-radius: 10px;
+	-webkit-box-shadow: 2px 2px 10px #77#perfilx-shadow: 2px 2px 10px #777;
+	width:80%;
+	margin: 20px auto;
+}
+#section_p{background-color: rgba(84, 94, 17, 0.3);}
+#perfil li{padding:10px;
+font-family:'Raleway', sans-serif;}
+#perfil{
+	color:#081749;
+	padding-top:15px;
+	font-size:1.2em;
+}
+
+#perfil h2, #perfil h3
+{   
+	border-bottom: 1px solid #641F01;
+    color: #641F01;
+    padding: 5px;
+    text-align: center;
+}
+#perfil h2{
+	 font-size: 3em;
+	  max-width: 900px;
+}
+#perfil h3{
+ font-size: 2em;
+ display:block;
+ clear:both;
+}
+#perfil figure{
+	float:left;
+	margin:5px;
+}
+div#user{
+	background-color: rgba(255, 255, 255, 0.3);
+	overflow:hidden;
+	padding:10px;
+}
+div#data_usr,div#actions {
+	width:400px;
+	float:left;
+	margin:auto;
+}
+div#actions{
+	border-left:1px solid #641f01;
+	padding:10px;
+}
+div#actions >a {
+   color: #641f01;
+   font-size:1.5em;
+}
+div#actions >a:hover{
+   color: orange;
+}
+div#entradas{
+	padding:10px;
+
+}
+table{
+	
+}
+th{
+	
+    color: #081749;
+    font-size: 1.3em;
+    padding: 7px;
+}
+tr{
+	
+	padding:5px;
+}
+tr:nth-child(odd){
+    ;
+}

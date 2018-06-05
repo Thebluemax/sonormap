@@ -1,0 +1,5 @@
+<?php if($flag>0) :?>
+	1
+	<?php else: ?>
+	0
+<?php endif; ?>

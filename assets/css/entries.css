@@ -1,0 +1,165 @@
+article figure
+{
+	background-color:white;
+	border-radius: 2px;
+	-webkit-box-shadow:0px 0px 10px  #777;
+	box-shadow:0px 0px 10px  #777;
+	width:100%;
+}
+article div.papel{
+	background-color:rgba(255,255,255,.6);
+	border-radius:2px;
+	-webkit-box-shadow:2px 2px 3px  #777;
+	box-shadow:2px 2px 3px  #777;
+
+}
+article figure >img
+{
+	display:block;
+	margin:auto;
+}
+#hdr_a_slc{
+	text-align: center;
+}
+#time_holder{
+	background-color: #c1640f;
+	color:lemonchifon;
+	text-align: right;
+}
+#usr_inf{
+	color: #641f01;
+	font-size: 1em;
+	text-align: right;
+}
+#usr_inf p{
+	display:inline-block;
+	width:100px;
+}
+#slc_itm_cont
+{
+	padding:7px;
+	text-align:center;
+}
+.lead
+{
+padding: 40px auto;
+}
+.separator
+{
+padding:20px;
+}
+.inner-box
+{
+	display:inline-block;
+	margin:5px;
+	height:250px;
+	vertical-align: top;
+	width:200px;
+	-webkit-transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+	-o-transition: all .5s ease-out;
+	-ms-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+}
+.itm_slc_bx
+{
+	height: inherit;
+}
+.itm_slc_bx:hover
+{
+	-webkit-box-shadow: 2px 2px 10px #333;
+	box-shadow: 2px 2px 10px #333;
+}
+.exp_holder
+{
+	height:inherit;
+}
+.exp_holder > img
+{
+	border-radius: 100px;
+	height: 200px;
+}
+/*.exp_holder:hover
+{
+	height:100px;
+}*/
+.ico_inf
+{
+	background-color: rgba(0, 0, 0, 0.9);
+	width:100%;
+	padding:2px 0px;
+}
+.ico_inf h3{
+	color:#fff;
+	text-decoration: none;
+	font-size:11pt;
+}
+.social_bt,#side_txt,#hst_txt{
+	display:inline-block;
+	vertical-align: top;
+	width: 45%;
+}
+#youtu,#map_cont {
+	webkit-box-shadow:0px 0px 10px  #777;
+	box-shadow:0px 0px 10px  #777;
+	margin:0px auto;
+	padding: 10px;
+}
+#map{
+	height:300px;
+	width:100%;
+
+}
+#hst_txt {
+	font-size:16pt;
+	margin-left: 20px;
+	padding:10px;
+}
+#side_txt{
+	margin-left: 20px;
+}
+.social_bt{
+	width:30%;
+	padding:7px;
+}
+.small{
+	width:20%;
+}
+#aud_cnt,#hst_txt{
+	background-color: rgba(255,255,255,.6);
+	border-radius: 5px;
+	-webkit-box-shadow: 2px 2px #777;
+	box-shadow: 2px 2px #777;
+	margin-bottom: 20px;
+	padding:10px;
+}
+#youtu{
+	width:480;
+}
+#ht_foot{
+	border-bottom: 1px solid #6a1f01;
+	background-color: #c1640f;
+	margin-top: 0px;
+	padding:3px 0px;
+	height:auto;
+}
+#title-bar
+{
+	width: 100%;
+	padding: 0% 3%;
+}
+.side-text
+{
+	background-color: rgba(255, 255, 255, 0.9);
+	height:95%;
+	overflow: hidden;
+	overflow-y: scroll;
+
+	position: absolute;
+	top: 0px;
+	width: 40%;
+}
+.content-holder
+{
+	position: relative;
+}
