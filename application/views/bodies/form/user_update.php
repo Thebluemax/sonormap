@@ -17,7 +17,7 @@
 	<div class="col-lg-5">
 		<div class="well">
 			<?php if(isset($avatar)): ?>
-			<form action="<?=site_url('user/actualizar/update_avatar')?>" method="post" enctype='multipart/form-data' role="form">
+			<form action="<?=site_url('admin/user/update_avatar')?>" method="post" enctype='multipart/form-data' role="form">
 			<fieldset>
 				<legend><?=$this->lang->line('s_usr_atz')?></legend>
 				<img src="<?=base_url('img/user_img').'/'.$avatar?>" alt="">
@@ -31,7 +31,7 @@
 	</div>
 	<div class="col-lg-4">
 		<div class="well">
-		<form action="<?=site_url('user/perfil/update_perfil')?>" method="post" enctype='multipart/form-data' role="form">
+		<form action="<?=site_url('admin/user/update_user')?>" method="post" enctype='multipart/form-data' role="form">
 			<fieldset>
 				<input type="hidden" value="<?=$id?>" id="ref" name="ref">
 			<legend><?=$this->lang->line('s_usr_hola')?> <?=$alias?>, <?=$this->lang->line('s_usr_msj')?></legend>
