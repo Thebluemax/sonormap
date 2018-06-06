@@ -99,7 +99,11 @@ public function key_lost ()
 	$head_html=$this->load->view("headers/login_head_view",'',TRUE);
 	$this->show_page($head_html,$data_p,$this->section,$aside);
 }
-
+/**
+ * Renovación de la contraseña.
+ * @param  [type] $value [description]
+ * @return [type]        [description]
+ */
 public function new_key($value)
 {
   $head_html="";

@@ -37,7 +37,7 @@
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<?php endif;  ?>
 	<div id="main_box">
-	<header id="header_p" class="navbar navbar-default ">
+	<header id="header_p" class="navbar navbar-default navbar-expand-lg">
 		<div class="navbar-header">
 		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 		      <span class="icon-bar"></span>
@@ -50,8 +50,8 @@
 	  		<ul class="nav navbar-nav">
 				<li><a href=<?='"'.site_url('home').'"'?> title=""><?=$this->lang->line('s_nav_inic')?></a></li>
 				<li><a href=<?='"'.site_url('historias').'"'?> title="">HISTORIAS</a></li>
-			<?php if ($mSecurity):?>
 			</ul>
+			<?php if ($mSecurity):?>
 			<ul class="nav navbar-nav navbar-right">
 				<li>
 					<div class="btn-group ">
@@ -96,11 +96,19 @@
 							</div>
 						</div>
 				</li>
-				<?php else:?>
-				<li><a href="#" data-toggle="modal" data-target="#loginModal">LOGIN</a></li>
-		     	<li><a href=<?='"'.site_url('registrar').'"'?> title=""><?=$this->lang->line('s_nav_ins')?></a></li>
-					<?php endif;?>
 			</ul>
+				<?php else:?>
+			<ul class="nav navbar-nav navbar-right ">
+				<li>
+					<a class="" href="#" data-toggle="modal" data-target="#loginModal">LOGIN</a>
+				</li>
+				<li>
+					<a class="btn-link" href=<?='"'.site_url('registrar').'"'?> title=""><?=$this->lang->line('s_nav_ins')?></a>
+				</li>
+			</ul>
+
+					<?php endif;?>
+
 	  	</nav>
   	</header><!-- /header -->
 	<div id="main">

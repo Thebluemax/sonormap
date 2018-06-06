@@ -11,7 +11,8 @@
  * @license		http://creativecommons.org/licenses/by-nc-sa/3.0/.
  * @link		https://github.com/Thebluemax/Sonormap
  * @since		Version 0.0
- * 
+ * @filesource
+ *
  */
  * Sonormap
  *
@@ -24,14 +25,13 @@
  * @license		http://  /license.html
  * @link		http://
  * @since		Version 0.0
- * @filesource
  */
 class Acceptfile extends CI_Controller {
 
 	public function __construct($value="")
 	{
 		parent::__construct();
-		
+
 	}
 	/**
 	 * captura un archivo de audio y lo guarda en el servidor.
@@ -48,13 +48,13 @@ class Acceptfile extends CI_Controller {
 			    $_REQUEST['filename']=$this->uri->segment(3);
 			}
 	$upload_path = "./upload";
-   
+
    $filename = $_REQUEST['filename'];
-   
+
    $fp = fopen($upload_path."/".$filename.".wav", "wb");
-   
+
    fwrite($fp, file_get_contents('php://input'));
-   
+
    fclose($fp);
    echo 1;
 	}

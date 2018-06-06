@@ -2,10 +2,10 @@
 /**
  * Sonormap
  *
- * An open source application for archive sounds for the education and history
+ * An open source application for archive media for the education and history
  * of a City or region, Develop in Codeigniter framework for PHP 5.1.6 or newer
  *
- * @package   Sonormap
+ * @package   application
  * @author    MaximilianoFernández
  * @copyright Creative Commons Atribución-NoComercial-CompartirIgual 3.0 - 2013
  * @license   http://creativecommons.org/licenses/by-nc-sa/3.0/.
@@ -37,7 +37,7 @@ class Contact extends MY_Controller
 		$data=array(
       			'captcha'=>''//$this->recaptcha->recaptcha_get_html()
     			);
-		$this->section=$this->load->view('bodys/form/contacta_form', $data, TRUE);
+		$this->section=$this->load->view('bodies/form/contacta_form', $data, TRUE);
 		$this->array_page ['page']=$this->page;
 		$this->show_page();
 	}
@@ -101,7 +101,7 @@ class Contact extends MY_Controller
       	    $this->section.=$this->lang->line('s_reg_msj3');
             $data=array('captcha'=>'');//$this->recaptcha->recaptcha_get_html());
       	}
-        $this->section.=$this->load->view('bodys/form/contacta_form', $data, TRUE);
+        $this->section.=$this->load->view('bodies/form/contacta_form', $data, TRUE);
 		$this->show_page();
 	}
 }

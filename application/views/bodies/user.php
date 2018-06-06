@@ -2,38 +2,24 @@
 	<div class="row mtbox">
   		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
   			<div class="box1">
-	  			<span class="li_news"></span>
-	  			<h3>89</h3>
-  			</div>
-	  			<p>89 Artículos en La web</p>
-  		</div>
-  		<div class="col-md-2 col-sm-2 box0">
-  			<div class="box1">
 	  			<span class="li_cloud"></span>
-	  			<h3>151</h3>
+	  			<h3><?=$total?></h3>
   			</div>
-	  			<p>151 número de archivos guardados en disco.</p>
+	  			<p><?=$total?> Artículos en la web</p>
   		</div>
   		<div class="col-md-2 col-sm-2 box0">
-  			<div class="box1">
-	  			<span class="li_user"></span>
-	  			<h3>14</h3>
-  			</div>
-	  			<p>89 usuarios registrados.</p>
-  		</div>
-  		<div class="col-md-2 col-sm-2 box0">
-  			<div class="box1">
-	  			<span class="li_stack"></span>
-	  			<h3>5</h3>
-  			</div>
-	  			<p>5 articulos para revistas y publicar.</p>
-  		</div>
-		<div class="col-md-2 col-sm-2 box0">
   			<div class="box1">
 	  			<span class="li_eye"></span>
-	  			<h3>870</h3>
+	  			<h3><?=$seen?></h3>
   			</div>
-	  			<p>870 visitas han leido articulos.</p>
+	  			<p><?=$seen?> visitas a todos tus artículos</p>
+  		</div>
+  		<div class="col-md-2 col-sm-2 box0">
+  			<div class="box1">
+	  			<span class="li_eye"></span>
+	  			<h3><?=$title?></h3>
+  			</div>
+	  			<p>El más visto, con <?=$maxSeen?> visitas</p>
   		</div>
 
 	</div>
@@ -67,9 +53,9 @@
   <?=$this->lang->line('s_usr_cx') ?>
 </a></li>
 			<?php if($mailing==1): ?>
-			<li class="list-group-item"><a  href="<?=site_url('user/actualizar/mailing/no')?>"><?=$this->lang->line('s_usr_ab') ?></a></li>
+			<li class="list-group-item"><a  href="<?=site_url('admin/user/mailing/no')?>"><?=$this->lang->line('s_usr_ab') ?></a></li>
 			<?php else: ?>
-			<li class="list-group-item"><a  href="<?=site_url('user/actualizar/mailing/si')?>"><?=$this->lang->line('s_usr_aa') ?></a></li>
+			<li class="list-group-item"><a  href="<?=site_url('admin/user/mailing/si')?>"><?=$this->lang->line('s_usr_aa') ?></a></li>
 			<?php endif; ?>
 			<li class="list-group-item"><a  href="<?=site_url('user/actualizar/eliminar_cuenta')?>"><?=$this->lang->line('s_usr_cl') ?></a></li>
 		</ul>
