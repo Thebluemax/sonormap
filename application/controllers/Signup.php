@@ -17,8 +17,8 @@ class Signup extends MY_Controller {
 		$this->array_page['recaptcha']=$this->recaptcha->render();
 		// Cargamos el ayudante de fecha.
 		//$this->load->helper('birthday_helper');
-		$this->section=$this->load->view('bodys/form/singup_form',$this->array_page, TRUE);
-		//$this->aside=$this->load->view('bodys/asid_reg_view','', TRUE);
+		$this->section=$this->load->view('bodies/form/singup_form',$this->array_page, TRUE);
+		//$this->aside=$this->load->view('bodies/asid_reg_view','', TRUE);
         $this->js_script[]="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit";
         $this->js_script[]=site_url('js/js_eng/rgtr');
 		//array con el contenido
@@ -132,7 +132,11 @@ class Signup extends MY_Controller {
 
 	}
 	/**
-	 * Función para confirmar el registro de un nuevo usuario.
+	 * Método de la página de confirmación del mail
+	 * de registro de un nuevo usuario.
+	 *
+	 * @param  string $value valor de el hash del formulario
+	 * @return Página de confirmación
 	 */
 public function confirmation($value='')
 {
@@ -151,12 +155,12 @@ public function confirmation($value='')
 		   if($final>0){
 			//si todo fue bien borramos el hash.
 				  $this->login_model->delet_old($user);
-				  $this->section=$this->load->view("bodys/notice/reg_ok_view",'',TRUE);
+				  $this->section=$this->load->view("bodies/notice/reg_ok_view",'',TRUE);
 		 }else{
-			  $this->section=$this->load->view("bodys/notice/the_server_is_mad",'',TRUE);
+			  $this->section=$this->load->view("bodies/notice/the_server_is_mad",'',TRUE);
 		 }
   }else{
-	$this->section=$this->load->view("bodys/notice/hash_lost",'',TRUE);
+	$this->section=$this->load->view("bodies/notice/hash_lost",'',TRUE);
   }
 		  $this->head_html[]=site_url('stylesheet/regist');
   // monto la página
@@ -207,7 +211,7 @@ public function reenviar($value='')
 		 }
 	 //confirmacion envía la respuesta a Ajax
 	$data = array('flag' =>$respose );
-	$this->load->view('bodys/notice/db_return_view',$data);
+	$this->load->view('bodies/notice/db_return_view',$data);
    }
 }
 /* End of file registrar.php */

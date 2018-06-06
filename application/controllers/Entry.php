@@ -40,7 +40,7 @@ class Entry extends MY_Controller {
 		$list_t=$list_t['ret']->result();
 		$this->array_page['list_t']=$list_t;
 		//preparamos las vistas.
-		$this->section=$this->load->view('bodys/list_entries', $this->array_page,TRUE);
+		$this->section=$this->load->view('bodies/list_entries', $this->array_page,TRUE);
 		//enviamos la página a la función.
 		$this->show_page();
 	}
@@ -59,7 +59,7 @@ class Entry extends MY_Controller {
 		$list_t=$list_t['ret']->result();
 		$this->array_page['list_t']=$list_t;
 		//preparamos las vistas.
-		$this->section=$this->load->view('bodys/list_entries', $this->array_page,TRUE);
+		$this->section=$this->load->view('bodies/list_entries', $this->array_page,TRUE);
     	//enviamos la página a la función.
 		$this->show_page();
 	}
@@ -127,7 +127,7 @@ class Entry extends MY_Controller {
 				'ctg' =>$resp->categoria
 				);
 			     // echo  convert_accented_characters($resp->titulo);
-			$this->section=$this->load->view('bodys/entry_view', $data,TRUE);
+			$this->section=$this->load->view('bodies/entry_view', $data,TRUE);
 		}else{
 			redirect('404');
 		}
@@ -161,7 +161,7 @@ class Entry extends MY_Controller {
 	    		$usr_data['mes_total_num']=$statics->max_vist;
 	    		$usr_data['total_v_i']=$statics->visuali;
 	    	}
-            $this->section=$this->load->view('bodys/card_view', $usr_data, TRUE);
+            $this->section=$this->load->view('bodies/card_view', $usr_data, TRUE);
 
 	    }else
 	    {
