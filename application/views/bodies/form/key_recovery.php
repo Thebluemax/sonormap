@@ -9,7 +9,7 @@
 <p class="lead"><?=$this->lang->line('s_re_ins')?></p>
 <p>
 
-<form action="<?=site_url('login/key_lost')?>" method="post" class="form-horizontal">
+<form action="<?=site_url('keylost')?>" method="post" class="form-horizontal">
   <div class="col-lg-10 col-lg-offset-1">
     <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">@</span>

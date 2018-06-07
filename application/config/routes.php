@@ -68,6 +68,9 @@ $route['administracion/historias/(.+)'] = 'admin/admin/entries/$1';
 $route['user/perfil'] = 'admin/user';
 $route['user/update'] = 'admin/user/update';
 
+$route['recuperar_contrasenia'] = 'admin/key_recovery';
+$route['keylost'] = 'admin/key_recovery/key_lost';
+
 $route['user/perfil/lista'] = 'admin/user/my_list';
 $route['user/perfil/lista/(.+)'] = 'user/perfil/my_list/(.+)';
 

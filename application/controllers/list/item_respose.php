@@ -11,13 +11,12 @@
  * @license     http://creativecommons.org/licenses/by-nc-sa/3.0/.
  * @link        https://github.com/Thebluemax/Sonormap
  * @since       Version 0.0
- * 
+ *
  */
 
 class Item_respose extends CI_Controller {
 	public function __construct()
 	{
-
 		parent::__construct();
 		//Do your magic here
 		$this->load->model('list_model');
@@ -59,7 +58,7 @@ class Item_respose extends CI_Controller {
         				 'ctg' =>$resp->categoria );
 
         $this->load->view('spare_part/item_view', $data, FALSE);
-		
+
 	}
 
         public function get_adm($value="")
@@ -96,9 +95,9 @@ class Item_respose extends CI_Controller {
                          'lat' =>$resp->latitud ,
                          'lon' =>$resp->longitud ,
                          'ctg' =>$resp->categoria );
-        
+
         $this->load->view('spare_part/item_adm_view', $data, FALSE);
-        
+
     }
 
 }
