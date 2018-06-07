@@ -168,7 +168,7 @@
 		</div>
 	</form>
 		</div>
-	<a href="<?=site_url('login/recuperar_key') ?>"><?=$this->lang->line('s_usr_rckp')?></a>
+	<a href="<?=site_url('recuperar_contrasenia') ?>"><?=$this->lang->line('s_usr_rckp')?></a>
 </div>
 </div>
 </div>
