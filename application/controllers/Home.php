@@ -2,15 +2,15 @@
 /**
  * Sonormap
  *
- * An open source application for archive sounds for the education and history
+ * An open source application for archives, sounds for the education and history
  * of a City or region, Develop in Codeigniter framework for PHP 5.1.6 or newer
  *
- * @package		Sonormap
+ * @package		application/controllers/Home.php
  * @author		MaximilianoFernández
  * @copyright	Creative Commons Atribución-NoComercial-CompartirIgual 3.0 - 2013
  * @license		http://creativecommons.org/licenses/by-nc-sa/3.0/.
  * @link		https://github.com/Thebluemax/Sonormap
- * @since		Version 0.0
+ * @since		Version 0.2
  *
  */
 
