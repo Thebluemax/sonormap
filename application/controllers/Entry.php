@@ -5,12 +5,12 @@
 * An open source application for archive sounds for the education and history
 * of a City or region, Develop in Codeigniter framework for PHP 5.1.6 or newer
 *
-* @package   application/controllers
+* @package   application/controllers/Entry.php
 * @author    Maximiliano Fernández
 * @copyright Creative Commons Atribución-NoComercial-CompartirIgual 3.0 - 2013
 * @license   http://creativecommons.org/licenses/by-nc-sa/3.0/.
 * @link    	 https://github.com/Thebluemax/Sonormap
-* @since     Version 0.0
+* @since     Version 0.2
 *
 */
 class Entry extends MY_Controller {
@@ -156,7 +156,7 @@ class Entry extends MY_Controller {
 	    	if ($statics->num_rows()>0) {
 	    		$statics=$statics->row();
 	    		$usr_data['total_i']=$statics->total;
-          $usr_data['mes_vist_id']=$statics->id_reg_max;
+          		$usr_data['mes_vist_id']=$statics->id_reg_max;
 	    		$usr_data['mes_vist_t']=$statics->titulo_i;
 	    		$usr_data['mes_total_num']=$statics->max_vist;
 	    		$usr_data['total_v_i']=$statics->visuali;
