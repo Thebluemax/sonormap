@@ -76,7 +76,7 @@
 									<a role="menuitem" tabindex="-1" href="<?=site_url('user/perfil/lista') ?>"><span class="glyphicon glyphicon-map-marker"></span> Mis relatos</a>
 								</li>
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="<?=site_url('arxivar')?>"><span class="glyphicon glyphicon-plus"></span> Relato nuevo</a>
+									<a role="menuitem" tabindex="-1" href="<?=site_url('entries/new_entry')?>"><span class="glyphicon glyphicon-plus"></span> Relato nuevo</a>
 								</li>
 
 							<?php if($mRol>1): ?>

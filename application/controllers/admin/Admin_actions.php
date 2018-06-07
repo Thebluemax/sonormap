@@ -1,8 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+/**
+ * Sonormap
+ *
+ * An open source application for archive sounds for the education and history
+ * of a City or region, Develop in Codeigniter framework for PHP 5.1.6 or newer
+ *
+ * @package   applications/controllers/admin/Admin_actions.php
+ * @author    MaximilianoFernández
+ * @copyright Creative Commons Atribución-NoComercial-CompartirIgual 3.0 - 2013
+ * @license   http://creativecommons.org/licenses/by-nc-sa/3.0/.
+ * @link    https://github.com/Thebluemax/Sonormap
+ * @since   Version 0.0
+ */
 class Admin_actions extends MY_Controller {
-
+	/**
+	 * Constructor
+	 */
 	function __construct ()
 	{
 		parent::__construct();
@@ -13,17 +27,23 @@ class Admin_actions extends MY_Controller {
 		//$this->head_html[]=base_url('assets/css/admin.css');
 
 	}
-
+	/**
+	 * Página principal del panel de administración.
+	 * @return HTML
+	 */
 	public function index()
 	{
 
 	}
 	/**
-	 * Método para válidar una entrada
+	 * Método para válidar una entrada y activarla para que esté publicada.
+	 * @param  int $value El id de la entrada a evaluar
+	 * @return [type]        [description]
 	 */
 	public function validate ($value = '')
 	{
 		$value = intval($value);
+
 		if ($this->_security > 0 && $this->_userrole == 3) {
 			$resp = $this->admin_model->ckc_valid($value);
 			$data = array('success' => $resp,
@@ -32,9 +52,10 @@ class Admin_actions extends MY_Controller {
 		}
 	}
 	/**
-	 * Mátodo para bloquear una historía, las historias no se borran
+	 *  Método para bloquear una historía, las historias no se borran
 	 *
-	 * */
+	 * @return JSON
+	 */
 	public function block_entry()
 {
 	$value=$this->input->post('hist');

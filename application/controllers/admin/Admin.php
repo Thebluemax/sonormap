@@ -5,20 +5,22 @@
  * An open source application for archive sounds for the education and history
  * of a City or region, Develop in Codeigniter framework for PHP 5.1.6 or newer
  *
- * @package		Sonormap
+ * @package		application/controllers/admin/Admin.php
  * @author		Maximiliano Fernández
  * @copyright	Creative Commons Atribución-NoComercial-CompartirIgual 3.0 - 2013
  * @license		http://creativecommons.org/licenses/by-nc-sa/3.0/.
  * @link		https://github.com/Thebluemax/Sonormap
- * @since		Version 0.0
+ * @since		Version 0.2
  *
  */
-
-class Admin extends MY_Controller {
 /**
  * Clase Administració , página de gestión general del sitio.
  */
+class Admin extends MY_Controller {
 
+	/**
+	 * Constructor
+	 */
 	function __construct ()
 	{
 		parent::__construct();
@@ -91,9 +93,9 @@ class Admin extends MY_Controller {
 
 
 
-           	$this->section = $this->load->view('bodys/admin_view',$this->array_page, TRUE);
+           	$this->section = $this->load->view('bodies/admin_view',$this->array_page, TRUE);
         }else{
-        	$this->section = $this->load->view('bodys/notice/you_not_root' , '' , TRUE);
+        	$this->section = $this->load->view('bodies/notice/you_not_root' , '' , TRUE);
         }
 			//monto la pagina segun petición.
 		$this->js_script[] = base_url('assets/js/jquery.dcjqaccordion.2.7.js');
@@ -176,7 +178,12 @@ class Admin extends MY_Controller {
 		$this->show_page('admin');
 	}
 
-
+	/**
+	 * Administración de los usuarios de la web, según el value pasado por
+	 * parametro realiza filtros en la seleción de usuarios.
+	 * @param int $value El tipo de filtro a ejecutar.
+	 * @return HTML
+	 */
 	public function users($value='')
 	{
 		if ( $this->_userrole == 3 )
@@ -206,11 +213,11 @@ class Admin extends MY_Controller {
 				$data = array('items' =>$resp  );
 			}
 			$this->array_page['page']="Administ-users";
-			$this->section.=$this->load->view('bodys/users_admin', $data, TRUE);
+			$this->section.=$this->load->view('bodies/users_admin', $data, TRUE);
 		}
 		else
 		{
-			$this->section=$this->load->view('bodys/notice/you_not_root','', TRUE);
+			$this->section=$this->load->view('bodies/notice/you_not_root','', TRUE);
 		}
 		//$head_html=$this->load->view('headers/secr_hed_view','',TRUE);
 		$this->js_script[] = base_url('assets/js/pagination.js');
