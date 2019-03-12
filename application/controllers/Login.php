@@ -33,7 +33,12 @@ class Login extends MY_Controller {
 	public function index()
 	{
 	    $captcha="";
-	    $resp_capt=TRUE;
+      $resp_capt=TRUE;
+        
+        if ($this->session->userdata('autorizado')) {
+          redirect('user/perfil');
+      } 
+      
 
 	     //cargamos los helpers y librerias para los formularios
 	    $this->load->helper(array('form'));
@@ -103,7 +108,8 @@ class Login extends MY_Controller {
                    {
                     	redirect($this->session->flashdata('tmp_url'));
                    }
-             }else{//la cuenta no está activa o está bloqueada.
+             }else{
+               //la cuenta no está activa o está bloqueada.
               if($this->session->userdata('fallido')){
                           $this->session->unset_userdata('fallido') ;
                     }
@@ -143,8 +149,7 @@ class Login extends MY_Controller {
                     );
     }
 
-    $this->head_html[]='';
-    $this->section=$this->load->view('spare_part/form/login_view',$men, TRUE);
+    $this->section=$this->load->view('bodies/user_log_view',$men, TRUE);
       //montamos la página con el resultado.
     $this->show_page();
     }

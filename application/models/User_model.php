@@ -36,8 +36,31 @@ class User_model extends CI_Model {
   public function get_user($user='')
   {
   	$sql="SELECT * from usuario , persona WHERE usuario.alias_usuario='".$user."' and usuario.usuario_id = persona.usuario_id;";
-  	$resp=$this->db->query($sql);
-  	return $resp;
+    $resp=$this->db->query($sql);
+    if ($resp->num_rows() > 0) {
+      $resp = $resp->row();
+      $userInfo['success']  = TRUE;
+      $userInfo['id']  = $resp->usuario_id;
+      $userInfo['alias']  = $resp->alias_usuario;
+      $userInfo['active']  = $resp->cuenta_activa;
+      $userInfo['rol']  = $resp->rol;
+      $userInfo['confirmado']  = $resp->confirmado;
+      $userInfo['since']  = $resp->miembro_hace;
+      $userInfo['name']  = $resp->nombre;
+      $userInfo['lastname']  = $resp->apellido;
+      $userInfo['dob']  = $resp->data_nacimiento;
+      $userInfo['lastname']  = $resp->apellido;
+      $userInfo['email']  = $resp->mail;
+      $userInfo['notes']  = $resp->observacion;
+      $userInfo['gender']  = $resp->sexo;
+      if ($resp->avatar == 'null') {
+        $userInfo['avatar'] = $this->config->item('itm_no_img_m');
+      }
+    } else {
+      $userInfo = 0;
+    }
+    
+  	return $user;
   }
   public function update_user($value='')
   {

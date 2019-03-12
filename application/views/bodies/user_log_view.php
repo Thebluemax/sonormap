@@ -1,12 +1,12 @@
-<?php if($security>0):?>
+
 	<div id="header_user" class="radio10">
 	<?=$name.$this->lang->line('s_usr_mess')?><br>
 	<a href="<?=site_url('user/login/out')?>" title=""><?=$this->lang->line('s_usr_clos')?></a>
 </div>
 	
-<?php else: ?>
+
 <div id="header_log">
-	<form action=<?='"'.site_url('user/login').'"'?> method="post" accept-charset="utf-8">
+	<form action=<?='"'.site_url('login').'"'?> method="post" accept-charset="utf-8">
 		<div id="inputs">
 		<label for="usr_id"><?=$this->lang->line('s_lbl_usr')?></label>
 		<input type="text" id="usr_id" name="usr_id" placeholder="<?=$this->lang->line('s_plh_usr')?>">
@@ -19,4 +19,3 @@
 		</div>				
 	</form>
 </div>
-<?php endif;  ?>

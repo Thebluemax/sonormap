@@ -31,7 +31,7 @@
 </div>
 
 <div>
-  Status: <span id="status"></status>
+  Status: <span id="status"></span>
 </div>
       </div>
       <input type="button" id="record"  value="<?=$this->lang->line('s_new_gbr')?>">

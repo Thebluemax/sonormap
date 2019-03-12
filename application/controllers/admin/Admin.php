@@ -225,26 +225,29 @@ class Admin extends MY_Controller {
 	//monto la pagina segun petición.
 		$this->show_page('admin');
 	}
-public function ver_user()
+public function see_user()
 {
-	$resp=$this->admin_model->give_usr($this->input->post('usr'));
-	if ($resp->num_rows()>0) {
-		$output=json_encode($resp->result_array());
+	$resp = $this->admin_model->give_usr($this->input->post('usr'));
+	if ($resp != 0) {
+		
+		$output=json_encode($resp);
+
 	} else {
 		$output=json_encode( array( 'succes' => 'false' ));
 	}
 	$this->output->set_content_type('application/json')->set_output($output);
 }
 public function val_user()
-{     $user=$this->input->post('us');
-	 $this->load->model('login_model');
-	 $final=$this->login_model->activate($user);
+{     
+		$user=$this->input->post('us');
+	 	$this->load->model('login_model');
+	 	$final=$this->login_model->activate($user);
 	    if($final>0){
             //si todo fue bien borramos el hash.
-                  $this->login_model->delet_old($user);
-                  $output=json_encode(array('succes' =>'true'));
+            $this->login_model->delet_old($user);
+            $output=json_encode(array('succes' =>'true'));
 	} else {
-		$output=json_encode( array('succes' =>'false'  ));
+						$output=json_encode( array('succes' =>'false'  ));
          }
  $this->output->set_content_type('application/json')->set_output($output);
 }

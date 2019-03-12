@@ -8,8 +8,8 @@ function init()
 	indice.build_list('li');
 	indice.paginationBoton();
 	indice.showList();
-	$('a.btn-card').click(function(e)
-		{
+	$('button.btn-card').click(function(e)
+		{	
 			e.preventDefault();
 			userCard($(this).data('userid'));
 		});
@@ -40,7 +40,7 @@ function init()
 function userCard(u)
 {
 
-	var url_req ="<?=site_url('administracio/ver_user')?>";
+	var url_req ="/admin/admin/see_user";
 	dates={
             'usr':u
            }
@@ -49,20 +49,24 @@ function userCard(u)
 
 }
 function buildCard(msg) {
-	if(msg.succes!=='false'){
-              				msg=msg[0];
-              				var openBox="<div id=\"card\" class=\"alert alert-warning alert-dismissible\" role=\"alert\">";
-              				var closeBtn="<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>";
-							var cardInfo="<div class=\"media-left\"><img src=\"<?=base_url('img/user_img')?>/"+msg.avatar+"\" width=\"120\"></div><div class=\"media-body\">"+
-							"<p id=\"usr-info\"> <h4 class=\"media-heading\">"+msg.alias_usuario+"</h4>"+
-							"<em>Nombre y Apellido: </em>"+msg.nombre+" "+msg.apellido_1+" "+msg.apellido_2+"<br>"+
-							"<em>data de naxeiment: </em>"+msg.dat_nacimiento+"<br><em>Email: </em>"+msg.mail+"</p>";
-							var closeDiv="</div></div>";
-
-                  			//$('#usr_rol').html(msg.rol);
-                    		$('div#usr-card').html(openBox+closeBtn+cardInfo+closeDiv).slideDown();
-            		}else{
-              				//lanzar_mensaj("<?=$this->lang->line('s_adm_meu')?>");
+	
+	if(msg.success){
+		//msg=msg[0];
+		var openBox="<div id=\"card\" class=\"alert alert-warning alert-dismissible\" role=\"alert\">";
+		var closeBtn="<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>";
+		var cardInfo="<div class=\"media-left\"><img src=\"/img/user_img/"+msg.avatar+"\" width=\"120\"></div><div class=\"media-body\">"+
+		"<p id=\"usr-info\"> <h4 class=\"media-heading\">"+msg.alias+"</h4>"+
+		"<span>ID: </span>"+msg.id+"<br>"+
+		"<em>Nombre y Apellido: </em>"+msg.name+" "+msg.lastname+"<br>"+
+		"<em>Miembro desde: </em>"+msg.since+"<br>"+
+		"<em>data de naxeiment: </em>"+msg.dob+"<br><em>Email: </em>"+msg.email+"</p>";
+		var closeDiv="</div></div>";
+		
+		//$('#usr_rol').html(msg.rol);
+		$('div#usr-card').html(openBox+closeBtn+cardInfo+closeDiv).slideDown();
+	}else{
+		//lanzar_mensaj("<?=$this->lang->line('s_adm_meu')?>");
+		console.log(msg);
             		}
 }
 function blockUser(u)

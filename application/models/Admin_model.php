@@ -192,10 +192,34 @@ AS bloque,
     */
    public function give_usr($id="")
 {
-  $sql="SELECT u.*, p.*, u.usuario_id as usr_id FROM persona p, usuario u WHERE
+  $sql="SELECT * FROM persona p, usuario u WHERE
    p.usuario_id=u.usuario_id AND u.usuario_id=".$id;
   $res=$this->db->query($sql);
-  return $res;
+  if ($res->num_rows() > 0) {
+    $res = $res->row();
+    $user['success']  = TRUE;
+    $user['id']  = $res->usuario_id;
+    $user['alias']  = $res->alias_usuario;
+    $user['active']  = $res->cuenta_activa;
+    $user['rol']  = $res->rol;
+    $user['confirmado']  = $res->confirmado;
+    $user['since']  = $res->miembro_hace;
+    $user['name']  = $res->nombre;
+    $user['lastname']  = $res->apellido_1.' '.$res->apellido_2;
+    $user['dob']  = $res->data_nacimiento;
+    //$user['lastname']  = $res->apellido;
+    $user['email']  = $res->mail;
+    $user['notes']  = $res->observacion;
+    $user['gender']  = $res->sexo;
+    if ($res->avatar == 'null') {
+      $user['avatar'] = $this->config->item('itm_no_img_m');
+    }else {
+      $user['avatar'] = $res->avatar;
+    }
+  } else {
+    $user = 0;
+  }
+  return $user;
 }
 /**
  * Envio masivo de correo.
